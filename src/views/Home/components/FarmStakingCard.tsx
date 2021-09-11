@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, Card, CardBody, Heading } from '@polyxde/uikit'
+import { Button, Card, CardBody, Flex, Heading } from '@polyxde/uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
@@ -19,6 +19,7 @@ import { CAKE_NAME } from '../../../config'
 const StyledFarmStakingCard = styled(Card)`
   text-align: left;
   height: max-content;
+  min-height: 100%;
 `
 
 const Block = styled.div`
@@ -74,40 +75,47 @@ const FarmedStakingCard = () => {
   }, [onReward])
 
   return (
-    <StyledFarmStakingCard>
-      <CardBody>
-        <Block>
-          <div>
-            <Row>
-              <Heading style={{fontSize:"28px"}}>Your Reward</Heading>
-            </Row>
-            <Row>
-              <CakeHarvestBalance earningsSum={earningsSum}/>
-            </Row>
-            <Row>
-              <Label>${(eggPrice * earningsSum).toFixed(2)}</Label>
-            </Row>
-          </div>
-        </Block>
+    <Flex>
+      <StyledFarmStakingCard style={{borderBottomRightRadius:0,borderTopRightRadius:0}}>
+        <CardBody style={{borderBottomRightRadius:0,borderTopRightRadius:0}}>
+          <Block>
+            <div>
+              <Row>
+                <Heading style={{fontSize:"28px"}}>Your Reward</Heading>
+              </Row>
+              <Row>
+                <CakeHarvestBalance earningsSum={earningsSum}/>
+              </Row>
+              <Row>
+                <Label>${(eggPrice * earningsSum).toFixed(2)}</Label>
+              </Row>
+            </div>
+          </Block>
 
-        <Actions>
-          {account ? (
-            <Button
-              id="harvest-all"
-              disabled={balancesWithValue.length <= 0 || pendingTx}
-              onClick={harvestAllFarms}
-              fullWidth
-            >
-              {pendingTx
-                ? TranslateString(548, ' Mumu')
-                : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
-            </Button>
-          ) : (
-            <UnlockButton className="imgBtn"/>
-          )}
-        </Actions>
-      </CardBody>
-    </StyledFarmStakingCard>
+          <Actions>
+            {account ? (
+              <Button
+                id="harvest-all"
+                disabled={balancesWithValue.length <= 0 || pendingTx}
+                onClick={harvestAllFarms}
+                fullWidth
+              >
+                {pendingTx
+                  ? TranslateString(548, ' Mumu')
+                  : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
+              </Button>
+            ) : (
+              <UnlockButton className="imgBtn"/>
+            )}
+          </Actions>
+        </CardBody>
+      </StyledFarmStakingCard>
+      <StyledFarmStakingCard style={{borderBottomLeftRadius:0,borderTopLeftRadius:0,height: "100%"}}>
+        <CardBody style={{borderBottomLeftRadius:0,borderTopLeftRadius:0}}>
+          <img src="/images/xde.png" alt="xde" style={{ height:"100px", marginTop: "50px"}}/>
+        </CardBody>
+      </StyledFarmStakingCard>
+    </Flex>
   )
 }
 

@@ -150,9 +150,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     }
     return farm.lpTotalInQuoteToken
   }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
-
   const totalValueFormated = totalValue
-    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
+    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 3 })}`
     : '-'
 
   const lpLabel = farm.lpSymbol
