@@ -53,10 +53,11 @@ export const useBurnedBalance = (tokenAddress: string) => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const cakeContract = getContract(cakeABI, getCakeAddress());
-      const balDead = await cakeContract.methods.balanceOf('0x000000000000000000000000000000000000dEaD').call();
-      const bal0 = await cakeContract.methods.balanceOf('0x0000000000000000000000000000000000000000').call();
-      setBalance(new BigNumber(balDead).plus(new BigNumber(bal0)));
+      const masterContract = getContract(masterchefABI, getMasterChefAddress());
+      /* const balDead = await cakeContract.methods.balanceOf('0x000000000000000000000000000000000000dEaD').call();
+      const bal0 = await cakeContract.methods.balanceOf('0x0000000000000000000000000000000000000000').call(); */
+      const burnedBal = await masterContract.methods.totalBurned().call();
+      setBalance(new BigNumber(burnedBal));
     }
 
     fetchBalance()

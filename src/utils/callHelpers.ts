@@ -84,7 +84,6 @@ export const harvest = async (masterChefContract, pid, account, address = "") =>
     .WithdrawFunds(pid, '0')
     .send({ from: account })
     .on('transactionHash', (tx) => {
-      alert(account);
       return tx.transactionHash
     })
 }

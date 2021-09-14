@@ -116,7 +116,7 @@ const fetchFarms = async () => {
         },
         {
           address: getMasterChefAddress(),
-          name: 'clawsPerBlock',
+          name: 'tokenPerBlock',
         },
       ]);
 
