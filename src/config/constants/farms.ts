@@ -16,10 +16,10 @@ const farms: FarmConfig[] = [
     tokenAddresses: {
       97: '',
       56: '',
-      137: '0x600A2C125b501E0A477E2C4AD0d9d51C0d6dF813'
+      137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
     },
-    quoteTokenSymbol: QuoteToken.USDC,
-    quoteTokenAddresses: contracts.usdc,
+    quoteTokenSymbol: QuoteToken.BNB,
+    quoteTokenAddresses: contracts.wbnb,
   },
   {
     pid: 2,
