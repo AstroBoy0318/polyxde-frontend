@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, Link as UIKitLink, OpenNewIcon, Progress, Text } from '@polyxde/uikit'
+import { Card, CardBody, Heading, Link as UIKitLink, OpenNewIcon, Progress, Text } from 'uikit-layer2'
 import { BSC_BLOCK_TIME } from 'config'
 import useI18n from 'hooks/useI18n'
 import useBlock from 'hooks/useBlock'

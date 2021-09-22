@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { provider } from 'web3-core'
 import { getContract } from 'utils/erc20'
-import { Button, Flex, Heading, LinkExternal, Text, useModal } from '@polyxde/uikit'
+import { Button, Flex, Heading, LinkExternal, Text, useModal } from 'uikit-layer2'
 import { Farm } from 'state/types'
 import { useFarmFromPid, useFarmUser } from 'state/hooks'
 import useI18n from 'hooks/useI18n'
@@ -20,11 +20,11 @@ const Action = styled.div`
     padding: 0 1em;
   }
   & > div > div{
-    border: 2px solid #524B63;
+    border: 1px solid #524B63;
     border-radius: 3px;
     height: 100%;
     flex: 1;
-    padding: 15px;
+    padding: 11px;
     min-width: 330px;
   }
 `
@@ -42,7 +42,7 @@ interface FarmCardActionsProps {
 const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account , buyUrl}) => {
   const TranslateString = useI18n()
   const [requestedApproval, setRequestedApproval] = useState(false)
-  const { pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP } = useFarmFromPid(farm.pid)
+  const { pid, lpAddresses, tokenAddresses, isTokenOnly, depositFeeBP, decimals } = useFarmFromPid(farm.pid)
   const { allowance, tokenBalance, stakedBalance, earnings } = useFarmUser(pid)
   const lpAddress = lpAddresses[process.env.REACT_APP_CHAIN_ID]
   const tokenAddress = tokenAddresses[process.env.REACT_APP_CHAIN_ID];
@@ -75,7 +75,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, ethereum, account ,
 
   const renderApprovalOrStakeButton = () => {
     return isApproved ? (
-      <StakeAction stakedBalance={stakedBalance} tokenBalance={tokenBalance} tokenName={lpName} pid={pid} depositFeeBP={depositFeeBP} />
+      <StakeAction stakedBalance={stakedBalance} tokenBalance={tokenBalance} tokenName={lpName} pid={pid} depositFeeBP={depositFeeBP} decimals={decimals}/>
     ) : (
       <Button variant="secondary" mt="8px" fullWidth disabled={requestedApproval} onClick={handleApprove}>
         {TranslateString(999, 'Approve Contract')}

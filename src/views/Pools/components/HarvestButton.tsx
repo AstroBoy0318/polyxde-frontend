@@ -96,7 +96,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   padding-right: ${(props) => props.padding}px;
   pointer-events: ${(props) => (!props.disabled ? undefined : 'none')};
   width: 100%;
-  border: 2px solid ${(props) => (!props.disabled ? `#33cbd7` : `#eee`)};
+  border: 0.9px solid ${(props) => (!props.disabled ? `#33cbd7` : `#eee`)};
   width: 100px;
   height: 30px;
   font-size: 14px;

@@ -1,4 +1,4 @@
-import { MenuEntry } from '@polyxde/uikit'
+import { MenuEntry } from 'uikit-layer2'
 
 const config: MenuEntry[] = [
   {
@@ -14,7 +14,17 @@ const config: MenuEntry[] = [
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: '/craters',
+    href: '/pools',
+  },
+ {
+    label: 'Buy',
+    icon: 'GroupsIcon',
+    href: 'https://quickswap.exchange/#/swap?outputCurrency=0x600a2c125b501e0a477e2c4ad0d9d51c0d6df813'
+  },
+ {
+    label: 'Liquidity',
+    icon: 'GroupsIcon',
+    href: 'https://quickswap.exchange/#/add/0x600A2C125b501E0A477E2C4AD0d9d51C0d6dF813'
   },
   {
     label: 'Referrals',
@@ -24,7 +34,17 @@ const config: MenuEntry[] = [
   {
     label: 'Chart',
     icon: 'GroupsIcon',
-    href: 'https://polygon.poocoin.app/'
+    href: 'https://dex.guru/token/0x600a2c125b501e0a477e2c4ad0d9d51c0d6df813-polygon'
+  },
+  {
+    label: 'Docs',
+    icon: 'GroupsIcon',
+    href: 'https://xdegenfinance.gitbook.io/idegen-finance/layers/iclaws'
+  },
+  {
+    label: 'xDegen',
+    icon: 'GroupsIcon',
+    href: 'https://xdegen.finance'
   }
 ]
 
@@ -32,22 +52,17 @@ export const socials = [
   {
     label: "Github",
     icon: "GithubIcon",
-    href: ""
+    href: "https://github.com/xdegen"
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/FinanceGoose",
+    href: "https://twitter.com/xDegenFinance",
   },
   {
     label: "Telegram",
     icon: "TelegramIcon",
-    href: ""
-  },
-  {
-    label: "Medium",
-    icon: "MediumIcon",
-    href: ""
+    href: "https://t.me/xDegenFinance"
   },
 ];
 

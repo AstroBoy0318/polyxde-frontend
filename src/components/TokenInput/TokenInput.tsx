@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js/bignumber'
-import { Button } from '@polyxde/uikit'
+import { Button } from 'uikit-layer2'
 import useI18n from '../../hooks/useI18n'
 import Input, { InputProps } from '../Input'
 

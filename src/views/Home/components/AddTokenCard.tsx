@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Button, Card, CardBody, Heading, Text } from '@polyxde/uikit'
+import { Button, Card, CardBody, Heading, Text } from 'uikit-layer2'
 import { useCake } from '../../../hooks/useContract'
 import { getWeb3 } from '../../../utils/web3'
 import { getCakeAddress } from '../../../utils/addressHelpers'
@@ -35,7 +35,7 @@ const TooltipButton = styled(Button)`
 
 const ItemDiv = styled.div`
   color: ${({ theme }) => theme.colors.text};
-  font-size: 20px;
+  font-size: 10px;
   line-height: 1.1em;
   text-align: center;
   & > div{
@@ -114,7 +114,7 @@ const AddTokenCard = () => {
           </ItemDiv>
           <ItemDiv style={{marginTop: "0em"}}>
             <ChildDiv>
-              <Button onClick={addToken} disabled={isPending}>Add { CAKE_NAME } to <img src="/images/icons/metamask.png" alt="metamask"/></Button>
+              <Button onClick={addToken} disabled={isPending}>Add { CAKE_NAME } <img src="/images/icons/metamask.png" alt="metamask"/></Button>
             </ChildDiv>
             <ChildDiv>
               <Button onClick={buyToken}>Buy { CAKE_NAME } from <img src="/images/icons/quickswap.png" alt="pancake"/></Button>

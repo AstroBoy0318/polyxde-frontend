@@ -1,7 +1,7 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Flex, Link, LinkExternal, Text } from '@polyxde/uikit'
+import { Flex, Link, LinkExternal, Text } from 'uikit-layer2'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { Address } from 'config/constants/types'
 import CardActionsContainer from './CardActionsContainer'

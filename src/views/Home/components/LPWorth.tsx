@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Card, Heading } from '@polyxde/uikit'
+import { Card, Heading } from 'uikit-layer2'
 import { useGetTotalSupply1, useGetTotalSupply2, useLPBnbamount1, useLPBnbamount2 } from 'hooks/useTokenBalance'
 import { usePriceBnbBusd } from '../../../state/hooks'
 
@@ -47,11 +47,11 @@ const LPWorth = () => {
 
   return (
     <MainContainer>
-      <Heading color="primary" size="xl" style={{ width:"100%",textAlign: "center" }}>Mumu LP Worth</Heading>
+      <Heading color="primary" size="xl" style={{ width:"100%",textAlign: "center" }}>xToken LP Worth</Heading>
       <div style={{width: "80%",margin: "0 auto", marginTop: "3em"}}>
       <ItemDiv>
         <LabelDiv>
-          Mumu-Matic
+          xToken-Matic
         </LabelDiv>
         <ValueDiv>
           ${ showlpprice1 !== 'NaN'?showlpprice1:0 }
@@ -60,7 +60,7 @@ const LPWorth = () => {
       </ItemDiv>
         <ItemDiv>
           <LabelDiv>
-            Mumu-USDC
+            xToken-USDC
           </LabelDiv>
           <ValueDiv>
             ${ showlpprice2 !== 'NaN'?showlpprice2:0 }

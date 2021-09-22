@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link, useRouteMatch } from 'react-router-dom'
-import { ButtonMenu, ButtonMenuItem } from '@polyxde/uikit'
+import { ButtonMenu, ButtonMenuItem } from 'uikit-layer2'
 
 const Wrapper = styled.div`
   display: flex;

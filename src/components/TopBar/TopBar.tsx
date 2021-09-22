@@ -6,8 +6,8 @@ const TopBar: React.FC = () => {
   return (
     <StyledTopBar>
       <img src="/images/1.svg" alt="bunny" style={{ height: '100%',position: 'absolute',right:'5%',bottom:'0',opacity:'0.6'}}/>
-      <div style={{fontSize: "40px", color: theme.colors.text, textAlign: "center"}}>PolyXDE</div>
-      <div style={{fontSize: "16px", color: theme.colors.text, textAlign: "center", marginTop: "1em"}}>The first Space based Auto Liquidity Aquisition Yield Farm</div>
+      <div style={{fontSize: "40px", color: theme.colors.text, textAlign: "center"}}>iClaws</div>
+      <div style={{fontSize: "16px", color: theme.colors.text, textAlign: "center", marginTop: "1em"}}>The first Auto Liquidity Aquisition Yield Farm</div>
     </StyledTopBar>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@polyxde/uikit'
+import { Card, CardBody, Heading, Text } from 'uikit-layer2'
 import BigNumber from 'bignumber.js/bignumber'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -47,9 +47,9 @@ const CakeStats = () => {
   const cakeSupply = getBalanceNumber(circSupply);
   const marketCap = eggPrice.times(circSupply);
 
-  let clawsPerBlock = 0;
-  if(farms && farms[0] && farms[0].clawsPerBlock){
-    clawsPerBlock = new BigNumber(farms[0].clawsPerBlock).div(new BigNumber(10).pow(18)).toNumber();
+  let tokenPerBlock = 0;
+  if(farms && farms[0] && farms[0].tokenPerBlock){
+    tokenPerBlock = new BigNumber(farms[0].tokenPerBlock).div(new BigNumber(10).pow(18)).toNumber();
   }
 
   return (
@@ -76,7 +76,7 @@ const CakeStats = () => {
         </Row>
         <Row>
           <Text fontSize="14px" color="text">New {CAKE_NAME}/block</Text>
-          <Text bold fontSize="14px">{clawsPerBlock}</Text>
+          <Text bold fontSize="14px">{tokenPerBlock}</Text>
         </Row>
       </CardBody>
     </StyledCakeStats>

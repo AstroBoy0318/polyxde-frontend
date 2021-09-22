@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { BaseLayout, Button, Card, CardBody, Link } from '@polyxde/uikit'
+import { BaseLayout, Button, Card, CardBody, Link } from 'uikit-layer2'
 import { useTotalReferralCommissions, useTotalReferrals } from '../../hooks/useTokenBalance'
 import UnlockButton from '../../components/UnlockButton'
 
@@ -78,7 +78,7 @@ const Refferals = () => {
                     Total Referral Commissions
                   </Heading>
                   <Body>
-                  {TotalReferralCommissionsValue}
+                  {TotalReferralCommissionsValue} iClaws
                   </Body>
                 </CardBody>
               </Card>

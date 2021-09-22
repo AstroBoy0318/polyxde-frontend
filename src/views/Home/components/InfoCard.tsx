@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Flex, Heading, Text } from '@polyxde/uikit'
+import { Card, CardBody, Flex, Heading, Text } from 'uikit-layer2'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import CardValue from './CardValue'
@@ -48,13 +48,13 @@ const InfoCard = () => {
   const cakeSupply = getBalanceNumber(circSupply);
   const marketCap = cakePrice.times(circSupply);
 
-  let clawsPerBlock = 0;
-  if(farms && farms[0] && farms[0].clawsPerBlock){
-    clawsPerBlock = new BigNumber(farms[0].clawsPerBlock).div(new BigNumber(10).pow(18)).toNumber();
+  let tokenPerBlock = 0;
+  if(farms && farms[0] && farms[0].tokenPerBlock){
+    tokenPerBlock = new BigNumber(farms[0].tokenPerBlock).div(new BigNumber(10).pow(18)).toNumber();
   }
 
   const maxAPY = farmsLP.reduce((preVal,farm)=>{
-    const cakeRewardPerBlock = new BigNumber(farm.clawsPerBlock || 1).times(new BigNumber(farm.poolWeight)).div(new BigNumber(10).pow(18))
+    const cakeRewardPerBlock = new BigNumber(farm.tokenPerBlock || 1).times(new BigNumber(farm.poolWeight)).div(new BigNumber(10).pow(18))
     const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
     let apy = cakePrice.times(cakeRewardPerYear);
@@ -85,7 +85,7 @@ const InfoCard = () => {
             </Heading>
           </StyleInfoPart>
           <StyleInfoPart>
-            <img src="/images/egg/LogoTextNewWhite.png" alt="logo" style={{ height:"60px", width: "240px", margin: "0 auto"}}/>
+            <img src="/images/egg/logo.png" alt="logo" style={{ height:"45px", width: "51px", margin: "0 auto"}}/>
             <Text bold mt="0.5em">
               Earn up to { maxAPY.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 2 }) }%
             </Text>
@@ -108,8 +108,8 @@ const InfoCard = () => {
               {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} decimals={0} />}
             </Row>
             <Row>
-              <Text fontSize="14px" color="text">New {CAKE_NAME}/block</Text>
-              <Text bold fontSize="14px" color="primary">{clawsPerBlock}</Text>
+              <Text fontSize="14px" color="text">{CAKE_NAME}/block</Text>
+              <Text bold fontSize="14px" color="primary">{tokenPerBlock}</Text>
             </Row>
           </StyleInfoPart>
         </Flex>

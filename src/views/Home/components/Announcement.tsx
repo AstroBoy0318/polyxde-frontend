@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Card, Heading } from '@polyxde/uikit'
+import { Card, Heading } from 'uikit-layer2'
 
 const MainContainer = styled(Card)`
   /* grid-row-start: 2;

@@ -1,7 +1,7 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { Flex, LinkExternal, Modal, Text } from '@polyxde/uikit'
+import { Flex, LinkExternal, Modal, Text } from 'uikit-layer2'
 import useI18n from 'hooks/useI18n'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { apyModalRoi, calculateCakeEarnedPerThousandDollars } from 'utils/compoundApyHelpers'
@@ -123,7 +123,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
       <Description fontSize="12px" color="textSubtle">
         {TranslateString(
           999,
-          'Calculated based on current rates. Compounding once daily. Rates are estimates provided for your convenience only, and by no means represent guaranteed returns.',
+          '',
         )}
       </Description>
       <Flex justifyContent="center">

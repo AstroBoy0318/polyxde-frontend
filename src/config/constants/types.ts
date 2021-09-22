@@ -30,9 +30,10 @@ export enum QuoteToken {
 */
 export enum QuoteToken {
   'BNB' = 'Matic',
-  'CAKE' = 'CLAWS',
+  'CAKE' = 'ICLAWS', // CLAWS O EL TOKEN QUE SE USE
   'SYRUP' = 'SYRUP',
   'BUSD' = 'USDC',
+  'USDC' = 'USDC',
 }
 
 export enum PoolCategory {

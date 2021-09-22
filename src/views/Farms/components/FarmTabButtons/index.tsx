@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link, useRouteMatch } from 'react-router-dom'
-import { ButtonMenu, ButtonMenuItem, Text, Toggle } from '@polyxde/uikit'
+import { ButtonMenu, ButtonMenuItem, Text, Toggle } from 'uikit-layer2'
 import useI18n from 'hooks/useI18n'
 
 const FarmTabButtons = ({ stakedOnly, setStakedOnly }) => {

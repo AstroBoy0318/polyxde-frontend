@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, Card, CardBody, Flex, Heading } from '@polyxde/uikit'
+import { Button, Card, CardBody, Flex, Heading } from 'uikit-layer2'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
@@ -81,7 +81,7 @@ const FarmedStakingCard = () => {
           <Block>
             <div>
               <Row>
-                <Heading style={{fontSize:"28px"}}>Your Reward</Heading>
+                <Heading style={{fontSize:"26px"}}>Your Rewards</Heading>
               </Row>
               <Row>
                 <CakeHarvestBalance earningsSum={earningsSum}/>
@@ -101,7 +101,7 @@ const FarmedStakingCard = () => {
                 fullWidth
               >
                 {pendingTx
-                  ? TranslateString(548, ' Mumu')
+                  ? TranslateString(548, ' iClaws')
                   : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
               </Button>
             ) : (
@@ -112,7 +112,32 @@ const FarmedStakingCard = () => {
       </StyledFarmStakingCard>
       <StyledFarmStakingCard style={{borderBottomLeftRadius:0,borderTopLeftRadius:0,height: "100%"}}>
         <CardBody style={{borderBottomLeftRadius:0,borderTopLeftRadius:0}}>
-          <img src="/images/xde.png" alt="xde" style={{ height:"100px", marginTop: "50px"}}/>
+          <Block>
+            <div>
+	<Row>
+	<Heading style={{fontSize:"23px"}}>Be honest, this is an honest farm</Heading>
+	</Row>
+
+            <Row>
+              <Label style={{fontSize:"15px"}}>Dont abuse! Buy/Sell 20% Max of total supply</Label>
+            </Row>
+            <Row>
+              <Label><br /></Label>
+            </Row>
+            <Row>
+              <Label>Farm Start: <a href="https://polygonscan.com/block/countdown/19405000">23/9/2021 ~5 PM UTC</a></Label>
+            </Row>
+            <Row>
+              <Label><br /></Label>
+            </Row>
+            <Row>
+              <Label style={{color:"#7ce0d6"}}><a href="https://polygonscan.com/tx/0x5cff684d31597434a97e0b2d15cc1206378321c43be8cba62feff7763d823b2c">iClaws token launched!</a></Label>
+            </Row>
+            <Row>
+            <Label><a href="https://rugdoc.io/project/xdegen-finance-iclaws"><img src="/images/egg/rugdoc-kyc.png" alt="KYC-RUGDOC" style={{ height:"68px", marginTop: "15px"}}/></a></Label>
+            </Row>
+            </div>
+          </Block>
         </CardBody>
       </StyledFarmStakingCard>
     </Flex>

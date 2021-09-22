@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
-import { Card, CardBody, Flex, Heading, HelpIcon, Skeleton, Text } from '@polyxde/uikit'
+import { Card, CardBody, Flex, Heading, HelpIcon, Skeleton, Text } from 'uikit-layer2'
 import { Farm } from 'state/types'
 import { provider } from 'web3-core'
 import useI18n from 'hooks/useI18n'
@@ -60,7 +60,7 @@ const StyledCardAccent = styled.div`
 const FCard = styled.div`
   align-self: baseline;  
   /* background: ${({ theme }) => theme.colors.card}; */
-  border-radius: 5px;
+  border-radius: 3px;
   display: flex;
   padding: 1px;
   flex-direction: column;
@@ -150,8 +150,9 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
     }
     return farm.lpTotalInQuoteToken
   }, [bnbPrice, cakePrice, farm.lpTotalInQuoteToken, farm.quoteTokenSymbol])
+
   const totalValueFormated = totalValue
-    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 3 })}`
+    ? `$${Number(totalValue).toLocaleString(undefined, { maximumFractionDigits: 0 })}`
     : '-'
 
   const lpLabel = farm.lpSymbol
@@ -197,42 +198,42 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
         />
         <Flex flexDirection="column">
           <Flex>
-            <Text bold textTransform="uppercase" color="text" fontSize="12px" pr="3px">
+            {/* <Text bold textTransform="uppercase" color="text" fontSize="12px" pr="3px"> */}
               {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
-              { CAKE_NAME }
-            </Text>
+             {/* { CAKE_NAME } */}
+            {/* </Text> */}
             <Text bold textTransform="uppercase" color="primary" fontSize="12px">
-              {TranslateString(999, 'Earned')}
+              {TranslateString(999, ' Pending Rewards')}
             </Text>
           </Flex>
           <Flex>
-            <Heading color={rawEarningsBalance === 0 ? 'text' : 'text'} style={{ fontSize: "16px" }}>{displayEarningBalance}</Heading>
+            <Heading color={rawEarningsBalance === 0 ? 'text' : 'text'} style={{ fontSize: "14px" }}>{displayEarningBalance} iClaws</Heading>
           </Flex>
           <Flex>
-            <Heading color={rawEarningsPrice === 0 ? 'text' : 'text'} style={{ fontSize: "16px" }}>${displayEarningPrice}</Heading>
+            <Heading color={rawEarningsPrice === 0 ? 'text' : 'text'} style={{ fontSize: "14px" }}>${displayEarningPrice}</Heading>
           </Flex>
         </Flex>
         <Flex flexDirection="column">
           <Flex>
-            <Text bold textTransform="uppercase" color="text" fontSize="12px" pr="3px">
-              {farm.lpSymbol}
-            </Text>
+            {/* <Text bold textTransform="uppercase" color="text" fontSize="12px" pr="3px"> */}
+              {/* {farm.lpSymbol} */}
+            {/* </Text> */}
             <Text bold textTransform="uppercase" color="primary" fontSize="12px">
-              {TranslateString(999, 'Staked')}
+              {TranslateString(999, 'STAKED')}
             </Text>
           </Flex>
+          {/* <Flex> */}
+            {/* <Heading color={rawStakedBalance === 0 ? 'text' : 'text'} style={{ fontSize: "13px" }}>{displayStakedBalance}</Heading> */}
+          {/* </Flex> */}
           <Flex>
-            <Heading color={rawStakedBalance === 0 ? 'text' : 'text'} style={{ fontSize: "16px" }}>{displayStakedBalance}</Heading>
-          </Flex>
-          <Flex>
-            <Heading color={rawStakedBalance === 0 ? 'text' : 'text'} style={{ fontSize: "16px" }}>${displayStakedPrice}</Heading>
+            <Heading color={rawStakedBalance === 0 ? 'text' : 'text'} style={{ fontSize: "13px" }}>${displayStakedPrice}</Heading>
           </Flex>
         </Flex>
         <Flex flexDirection="column">
         {!removed && (
           <Flex justifyContent="space-between" alignItems="center">
+            <Text bold style={{ display: 'flex', alignItems: 'center' }} fontSize="13px">
             <Text bold fontSize="14px">{TranslateString(352, 'APY')}:</Text>
-            <Text bold style={{ display: 'flex', alignItems: 'center' }} fontSize="14px">
               {farm.apy ? (
                 <>
                   <ApyButton
@@ -252,8 +253,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, bnbPrice,
           </Flex>
         )}
           <Flex justifyContent='space-between'>
-            <Text bold fontSize="14px">{TranslateString(318, 'Earn')}:</Text>
-            <Text bold fontSize="14px">{earnLabel}</Text>
+            {/* <Text bold fontSize="14px">{TranslateString(318, 'Earn')}:</Text> */}
+            {/* <Text bold fontSize="14px">{earnLabel}</Text> */}
           </Flex>
         </Flex>
         {!removed && (

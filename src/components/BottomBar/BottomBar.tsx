@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { Text } from '@polyxde/uikit'
+import { Text } from 'uikit-layer2'
 import { RefferalContext } from '../../contexts/RefferalContext'
 
 const BottomBar: React.FC = () => {

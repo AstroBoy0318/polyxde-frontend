@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Progress } from '@polyxde/uikit'
+import { Progress } from 'uikit-layer2'
 
 interface IfoCardProgressProps {
   progress: number

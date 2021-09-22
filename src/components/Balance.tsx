@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
-import { Text } from '@polyxde/uikit'
+import { Text } from 'uikit-layer2'
 
 interface TextProps {
   isDisabled?: boolean

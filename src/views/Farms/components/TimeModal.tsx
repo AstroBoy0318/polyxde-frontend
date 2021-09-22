@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Button, Modal,Text } from '@polyxde/uikit'
+import { Button, Modal,Text } from 'uikit-layer2'
 import ModalActions from 'components/ModalActions'
 import Spacer from '../../../components/Spacer'
 import { useHarvestTime, useNowTime } from '../../../hooks/useHarvest'

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading } from '@polyxde/uikit'
+import { Button, Flex, Heading } from 'uikit-layer2'
 import useI18n from 'hooks/useI18n'
 import { useHarvest, useHarvestTime, useNowTime } from 'hooks/useHarvest'
 import { getBalanceNumber } from 'utils/formatBalance'

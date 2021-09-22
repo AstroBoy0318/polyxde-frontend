@@ -1,4 +1,4 @@
-import { Button } from '@polyxde/uikit'
+import { Button } from 'uikit-layer2'
 import styled from 'styled-components'
 import React from 'react'
 

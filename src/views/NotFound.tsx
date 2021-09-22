@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Heading, LogoIcon, Text } from '@polyxde/uikit'
+import { Button, Heading, LogoIcon, Text } from 'uikit-layer2'
 import Page from 'components/layout/Page'
 import useI18n from 'hooks/useI18n'
 
@@ -20,7 +20,7 @@ const NotFound = () => {
       <StyledNotFound>
         <LogoIcon width="64px" mb="8px" />
         <Heading size="xxl">404</Heading>
-        <Text mb="16px">{TranslateString(999, 'Oops, page not found.')}</Text>
+        <Text mb="16px">{TranslateString(999, 'Page not found.')}</Text>
         <Button as="a" href="/" size="sm">
           {TranslateString(999, 'Back Home')}
         </Button>

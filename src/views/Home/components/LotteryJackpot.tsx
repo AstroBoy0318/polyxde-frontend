@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@polyxde/uikit'
+import { Text } from 'uikit-layer2'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from 'hooks/useTickets'

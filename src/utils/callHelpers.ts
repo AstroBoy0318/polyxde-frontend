@@ -7,9 +7,9 @@ export const approve = async (lpContract, masterChefContract, account) => {
     .send({ from: account })
 }
 
-export const stake = async (masterChefContract, pid, amount, account, address) => {
+export const stake = async (masterChefContract, pid, amount, account, address, decimals) => {
   return masterChefContract.methods
-    .addDeposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(),address)
+    .addDeposit(pid, new BigNumber(amount).times(new BigNumber(10).pow(decimals)).toString(),address)
     .send({ from: account })
     .on('transactionHash', (tx) => {
       return tx.transactionHash
@@ -36,7 +36,7 @@ export const sousStakeBnb = async (sousChefContract, amount, account) => {
 
 export const unstake = async (masterChefContract, pid, amount, account) => {
   return masterChefContract.methods
-    .WithdrawFunds(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
+    .withdrawFunds(pid, new BigNumber(amount).times(new BigNumber(10).pow(18)).toString())
     .send({ from: account })
     .on('transactionHash', (tx) => {
       return tx.transactionHash
@@ -81,7 +81,7 @@ export const sousEmegencyUnstake = async (sousChefContract, amount, account) => 
 export const harvest = async (masterChefContract, pid, account, address = "") => {
   return masterChefContract.methods
     // .deposit(pid, '0', address === ""?account:address)
-    .WithdrawFunds(pid, '0')
+    .withdrawFunds(pid, '0')
     .send({ from: account })
     .on('transactionHash', (tx) => {
       return tx.transactionHash

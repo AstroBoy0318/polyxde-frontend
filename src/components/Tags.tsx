@@ -1,5 +1,5 @@
 import React from 'react'
-import { BinanceIcon, CommunityIcon, Tag, VerifiedIcon } from '@polyxde/uikit'
+import { BinanceIcon, CommunityIcon, Tag, VerifiedIcon } from 'uikit-layer2'
 
 const NoFeeTag = () => (
   <Tag variant="success" outline startIcon={<VerifiedIcon />}>

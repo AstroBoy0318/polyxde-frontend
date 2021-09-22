@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import orderBy from 'lodash/orderBy'
-import { Card, CardBody, Heading } from '@polyxde/uikit'
+import { Card, CardBody, Heading } from 'uikit-layer2'
 import pools from 'config/constants/pools'
 import { Pool } from 'state/types'
 
@@ -41,7 +41,7 @@ const EarnAssetCard = () => {
         <Heading color="black" size="sm" style={{marginTop: '15px'}}>
           Earn
         </Heading>        
-        <CardMidContent color="#7f080e">Mumu</CardMidContent>
+        <CardMidContent color="#7f080e">xToken</CardMidContent>
           <Heading color="black" size="sm" style={{marginTop: '15px'}}>
             in Pools
           </Heading>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text } from '@polyxde/uikit'
+import { Heading, Text } from 'uikit-layer2'
 import useI18n from 'hooks/useI18n'
 import SecondaryCard from './SecondaryCard'
 import CardContent from './CardContent'
