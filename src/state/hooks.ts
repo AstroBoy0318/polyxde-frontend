@@ -69,7 +69,6 @@ export const usePoolFromPid = (sousId): Pool => {
 export const usePriceBnbBusd = (): BigNumber => {
   const pid = 999; // USDC/WMATIC
   const farm = useFarmFromPid(pid);
-  console.log(farm)
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
 }
 

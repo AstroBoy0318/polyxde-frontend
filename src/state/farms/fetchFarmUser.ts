@@ -40,9 +40,8 @@ export const fetchFarmUserTokenBalances = async (account: string) => {
 }
 
 export const fetchFarmUserStakedBalances = async (account: string) => {
-  const masterChefAdress = getMasterChefAddress()
-
-  const calls = farmsConfig.map((farm) => {
+  const masterChefAdress = getMasterChefAddress()  
+  const calls = farmsConfig.filter((farm)=>{return farm.risk > 0;}).map((farm) => {
     return {
       address: masterChefAdress,
       name: 'userInfo',
@@ -59,8 +58,7 @@ export const fetchFarmUserStakedBalances = async (account: string) => {
 
 export const fetchFarmUserEarnings = async (account: string) => {
   const masterChefAdress = getMasterChefAddress()
-
-  const calls = farmsConfig.map((farm) => {
+  const calls = farmsConfig.filter((farm)=>{return farm.risk > 0;}).map((farm) => {
     return {
       address: masterChefAdress,
       name: 'pendingToken',
