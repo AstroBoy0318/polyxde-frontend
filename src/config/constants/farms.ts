@@ -93,8 +93,8 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
-  }, 
-{
+  },
+  {
     pid: 5,
     risk: 5,
     isTokenOnly: true,
@@ -112,8 +112,8 @@ const farms: FarmConfig[] = [
     },
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
-  }, 
-{
+  },
+  {
     pid: 6,
     risk: 5,
     isTokenOnly: true,
@@ -132,7 +132,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
   },
-{
+  {
     pid: 7,
     risk: 5,
     isTokenOnly: true,
@@ -151,7 +151,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
   },
-{
+  {
     pid: 8,
     risk: 5,
     isTokenOnly: true,
@@ -170,7 +170,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
   },
-{
+  {
     pid: 9,
     risk: 5,
     isTokenOnly: true,
@@ -189,7 +189,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
   },
-{
+  {
     pid: 10,
     risk: 5,
     isTokenOnly: true,
@@ -208,7 +208,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,
   },
-{
+  {
     pid: 11,
     risk: 5,
     isTokenOnly: true,
@@ -223,6 +223,24 @@ const farms: FarmConfig[] = [
       97: '',
       56: '',
       137: '0x8f3cf7ad23cd3cadbd9735aff958023239c6a063'
+    },
+    quoteTokenSymbol: QuoteToken.USDC,
+    quoteTokenAddresses: contracts.usdc,
+  },
+  {
+    pid: 999,
+    risk: 0, // not to show only for getting matic price
+    lpSymbol: 'MATIC-USDC',
+    lpAddresses: {
+      97: '',
+      56: '',
+      137: '0x6e7a5FAFcec6BB1e78bAE2A1F0B612012BF14827'
+    },
+    tokenSymbol: 'MATIC',
+    tokenAddresses: {
+      97: '',
+      56: '',
+      137: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270'
     },
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAddresses: contracts.usdc,

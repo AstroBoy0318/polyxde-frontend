@@ -100,6 +100,22 @@ const fetchFarms = async () => {
         }
       }
 
+      if(farmConfig.risk === 0)
+      {
+        return {
+          ...farmConfig,
+          tokenAmount: tokenAmount.toJSON(),
+          // quoteTokenAmount: quoteTokenAmount,
+          lpTotalInQuoteToken: lpTotalInQuoteToken.times(new BigNumber(10).pow(tokenDecimals - quoteTokenDecimals)).toJSON(),
+          tokenPriceVsQuote: tokenPriceVsQuote.toJSON(),
+          poolWeight: 0,
+          multiplier: '0X',
+          depositFeeBP: 0,
+          tokenPerBlock: 0,
+          decimals: farmConfig.isTokenOnly?tokenDecimals:lpDecimals
+        }
+      }
+
 
       const [info, totalAllocPoint, tokenPerBlock] = await multicall(masterchefABI, [
         {

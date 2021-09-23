@@ -45,9 +45,7 @@ export const useFarmUser = (pid) => {
   }
 }
 
-
 // Pools
-
 export const usePools = (account): Pool[] => {
   const { fastRefresh } = useRefresh()
   const dispatch = useDispatch()
@@ -68,13 +66,14 @@ export const usePoolFromPid = (sousId): Pool => {
 
 // Prices
 
-  export const usePriceBnbBusd = (): BigNumber => {
-  const pid = 1; // TOKEN/WMATIC
+export const usePriceBnbBusd = (): BigNumber => {
+  const pid = 999; // USDC/WMATIC
   const farm = useFarmFromPid(pid);
+  console.log(farm)
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
- }
+}
 
- export const usePriceCakeBusd = (): BigNumber => {
+export const usePriceCakeBusd = (): BigNumber => {
   const pid = 2; // TOKEN/USDC
   const farm = useFarmFromPid(pid);
   return farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : ZERO;
@@ -92,12 +91,12 @@ export const useTotalValue = (): BigNumber => {
       let val;
       if (farm.quoteTokenSymbol === QuoteToken.BNB) {
         val = (bnbPrice.times(farm.lpTotalInQuoteToken));
-      }else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
+      } else if (farm.quoteTokenSymbol === QuoteToken.CAKE) {
         val = (cakePrice.times(farm.lpTotalInQuoteToken));
-      }else{
+      } else {
         val = (farm.lpTotalInQuoteToken);
       }
-      if(val.toString() !== 'NaN' && val.toString() !== 'Infinity')
+      if (val.toString() !== 'NaN' && val.toString() !== 'Infinity')
         value = value.plus(val);
     }
   }
