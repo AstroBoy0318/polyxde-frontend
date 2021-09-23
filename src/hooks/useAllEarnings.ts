@@ -13,7 +13,7 @@ const useAllEarnings = () => {
 
   useEffect(() => {
     const fetchAllBalances = async () => {
-      const calls = farmsConfig.map((farm) => ({
+      const calls = farmsConfig.filter((farm)=>{ return farm.risk > 0; }).map((farm) => ({
         address: getMasterChefAddress(),
         name: 'pendingToken',
         params: [farm.pid, account],
